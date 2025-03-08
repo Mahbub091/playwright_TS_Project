@@ -1,5 +1,7 @@
 {
   "lambdaTestUrl": "https://ecommerce-playground.lambdatest.io/",
+  "loginPageUrl": "https://ecommerce-playground.lambdatest.io/index.php?route=account/login",
+  "accountPageUrl": "https://ecommerce-playground.lambdatest.io/index.php?route=account/account",
   "pageTitle": "Your Store",
   "expectedTexts": [
     " Login",
@@ -15,5 +17,13 @@
     " Returns",
     " Transactions",
     " Newsletter"
+  ],
+  "accountMenuTexts": [
+    " Dashboard",
+    " My order",
+    " Return",
+    " Tracking",
+    " My voucher",
+    " Logout"
   ]
 }
