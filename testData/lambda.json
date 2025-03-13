@@ -19,11 +19,11 @@
     " Newsletter"
   ],
   "accountMenuTexts": [
-    " Dashboard",
-    " My order",
-    " Return",
-    " Tracking",
-    " My voucher",
-    " Logout"
+    "Dashboard",
+    "My order",
+    "Return",
+    "Tracking",
+    "My voucher",
+    "Logout"
   ]
 }
