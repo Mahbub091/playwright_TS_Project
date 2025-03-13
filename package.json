@@ -24,5 +24,9 @@
     "@types/node": "^22.13.9",
     "allure-playwright": "^3.0.9",
     "rimraf": "^6.0.1"
+  },
+  "dependencies": {
+    "allure-js-commons": "^3.2.0",
+    "winston": "^3.17.0"
   }
 }
