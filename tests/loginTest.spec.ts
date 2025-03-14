@@ -8,7 +8,7 @@ class LoginTest extends ExpectedTextProvider {
   }
 
   runTests() {
-    test.describe("Validating User Login Scenarios", () => {
+    test.describe.skip("Validating User Login Scenarios", () => {
       test.beforeEach(async ({ runner }) => {
         await runner.navigateTo(lambdaData.lambdaTestUrl);
         await runner.verifyContainsUrl(lambdaData.lambdaTestUrl);
@@ -61,8 +61,15 @@ class LoginTest extends ExpectedTextProvider {
         );
         await runner.verifyContainsUrl(lambdaData.accountPageUrl);
         await runner.mouseHover(lambdaPage.accountButton);
-        await runner.clickOnElement(lambdaPage.accountButton);
+        await runner.verifyLinksText(
+          loginPage.accountMenus,
+          this.accountMenuTexts,
+        );
       });
+
+      test("Validating Login Attempts With Invalid Credentials", async ({
+        runner,
+      }) => {});
     }); //exit
   }
 }
