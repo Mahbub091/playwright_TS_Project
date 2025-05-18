@@ -1,0 +1,68 @@
+{
+  "dashboardNavButtonText": "Dashboard",
+  "dashboardNavStartMatchingText": "Start Matching",
+  "dashboardNavMatchesText": "Matches",
+  "dashboardNavNotificationsText": "Notifications",
+  "dashboardNavAccountText": "Account",
+  "dashboardNavAccountProfileText": "Profile",
+  "dashboardNavAccountAdminText": "Admin",
+  "dashboardNavAccountSubmitFeedbackText": "Submit Feedback",
+  "dashboardNavAccountLogoutText": "Logout",
+
+  "navbarTexts": ["Dashboard", "Start Matching", "Matches", "Notifications"],
+  "dashboardNavAccountTexts": ["Profile", "Admin", "Logout"],
+
+  "dashboardHrefValue": "/dashboard",
+  "dashboardStartMatchingHrefValue": "/matcher",
+  "dashboardMatchesHrefValue": "/match",
+  "dashboardNotificationsHrefValue": "/notifications",
+  "dashboardAccountProfileHrefValue": "/profile",
+  "dashboardAccountAdminHrefValue": "/organization-admin",
+  "dashboardAccountLogoutHrefValue": "/logout",
+
+  "dashboardAllCardHeaderTexts": [
+    "# Opportunities",
+    "Opportunities",
+    "Funding Available",
+    "# Researchers",
+    "Funding Scenario Status\nView all",
+    "Recent Match Notifications\nView all"
+  ],
+
+  "dashboardAllOpportunitiesCardText": "All FundFit opportunities",
+  "dashboardNewResearchersOpportunitiesCardText": "New in last 7 days",
+  "dashboardExpireResearchersOpportunitiesCardText": "Expiring in next 7 days",
+  "dashboardFoundingAvailableCardText": "My potential / Total funding",
+  "dashboardAllResearchersCardText": "Researchers available for matching",
+  "dashboardFoundingScenarioText": "Your funding scenario distribution",
+  "dashboardRecentMatchNotificationsText": "Your configured notification triggers",
+
+  "dashboardFoundingScenarioButton": "View all",
+  "dashboardRecentMatchNotificationsButton": "View all",
+
+  "dashboardNotificationViewButton": "View",
+  "dashboardNotificationMatchTexts": [
+    "Match Opportunities",
+    "Match Researchers"
+  ],
+  "dashboardNotificationTexts": ["Researchers", "Opportunities"],
+
+  "notificationModalHeader": "Notification",
+  "notificationModalHeader2": "Bulk Notification",
+  "notificationModalNameLabel": "Name",
+  "notificationModalNotificationTypeSelectLabel": "Notification Type",
+  "notificationModalNotificationTypeSelectOption": ["Email", "RSS"],
+  "notificationModalUsersEmailSelectLabel": "Select Email Users",
+  "notificationModalEmailCheckboxLabel": "Confirm receiving emails?",
+  "notificationModalEmailCheckboxText": "You will receive daily emails with opportunities that match your search",
+  "notificationModalMatchTypeSelectLabel": "Match Type",
+  "notificationModalOpportunitiesSelectLabel": "Opportunity Search",
+  "notificationModalSelectCollaborationLabel": "Select Collaboration Institutions",
+  "notificationModalSelectCollaborationText": "If you leave this open, our AI will attempt to match you across all researchers!",
+  "notificationModalFindCollaborationHeader": "Find Collaboration Institutions",
+  "notificationModalFindCollaborationLabel": "Select Institutions",
+  "notificationModalFindCollaborationText": "Selected 1 institution",
+  "notificationModalCloseButton": "Close",
+
+  "noNotificationText": "No notifications set up yetCreate Notification"
+}

@@ -1,0 +1,16 @@
+{
+  "SuccessfulLoginToastText": "Login SuccessfulYou have been logged in successfully.",
+  "loginButtonText": "Login",
+  "invalidEmailOrPasswordErrorMessage": "ErrorLogin failed. Please try again.",
+  "loginPageEmailInputBoxHeader": "Email Address",
+  "loginPagePasswordInputBoxHeader": "Password",
+  "loginPageEmailPlaceholderText": "Enter your email",
+  "loginPagePasswordPlaceholderText": "Enter your password",
+  "loginPageEmailErrorMessage": "Invalid email address",
+  "loginPagePasswordErrorMessage": "Password is required",
+  "forgetPasswordButtonText": "Forgot password?",
+  "forgetPasswordHrefValue": "/forgot-password",
+  "forgetPasswordHeaderText": "To reset your password, please enter your email address.",
+  "submitButtonText": "Submit",
+  "forgetPasswordSuccessfulRequestText": "Forgot PasswordWe have sent you an email to set your password."
+}
