@@ -6,7 +6,7 @@
   "scripts": {
     "test:codegen": "npx playwright codegen",
     "pretest": "npx playwright install && npx rimraf playwright-report test-results reports",
-    "test": "npx playwright test || npm run allure:serve",
+    "test": "npx playwright test; npm run allure:serve",
     "testpw": "npx playwright test",
     "test:ui": "npx playwright test --ui",
     "test:chrome": "npx playwright test --project=chromium",
@@ -14,7 +14,8 @@
     "test:headed": "npx playwright test --headed",
     "posttest": "npx playwright show-report reports/html",
     "allure:serve": "allure serve ./reports/allure-results",
-    "mcp":"npx @playwright/mcp@latest"
+    "mcp": "npx @playwright/mcp@latest",
+    "playwright:install": "npx playwright install --with-deps"
   },
   "keywords": [],
   "author": "StreamLyne",
