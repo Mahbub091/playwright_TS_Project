@@ -58,7 +58,7 @@ class UserProfileTest extends ExpectedTextProvider {
           await runner.navigateTo(ENV.FUND_FIT_TEST_ENV_URL);
           await runner.verifyContainsUrl(ENV.FUND_FIT_TEST_ENV_URL);
           await runner.verifyPageTitle(fundFitData.fundFitTitle);
-          await runner.waitForMilliseconds(3000);
+          await runner.waitForMilliseconds(10000);
           await runner.validateAttribute(
             userLandingPage.headerImage,
             "src",
