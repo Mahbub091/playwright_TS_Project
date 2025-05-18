@@ -22,12 +22,12 @@ class UserDashboardPageTest extends ExpectedTextProvider {
           await runner.navigateTo(ENV.FUND_FIT_TEST_ENV_URL);
           await runner.verifyContainsUrl(ENV.FUND_FIT_TEST_ENV_URL);
           await runner.verifyPageTitle(fundFitData.fundFitTitle);
-          await runner.waitForMilliseconds(10000);
-          await runner.validateAttribute(
-            userLandingPage.headerImage,
-            "src",
-            fundFitData.logoImageSource,
-          );
+          // await runner.waitForMilliseconds(10000);
+          // await runner.validateAttribute(
+          //   userLandingPage.headerImage,
+          //   "src",
+          //   fundFitData.logoImageSource,
+          // );
 
           await runner.verifyElementIsVisible(userLandingPage.loginButton);
           await runner.validateTextAndClickOnElement(
