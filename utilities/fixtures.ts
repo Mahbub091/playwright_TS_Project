@@ -1,16 +1,24 @@
 import { test as base, Page } from "@playwright/test";
-import { LambdaHomePage } from "../pom/lambdaHomePage";
-import { Utils } from "./utils";
-import { LoginPage } from "../pom/LoginPage";
-import { AccountPage } from "../pom/accountPage";
-import { delineateHomePage } from "../pom/delineateHomePage";
+import { Utils } from "./utility";
+import { loginPage } from "../pageObjectModel/loginPage";
+import { homePage } from "../pageObjectModel/homePage";
+import { registerPage } from "../pageObjectModel/registerPage";
+import { dashboardPage } from "../pageObjectModel/dashboardPage";
+import { startMatchingPage } from "../pageObjectModel/startMatchingPage";
+import { matchesPage } from "../pageObjectModel/matchesPage";
+import { notificationPage } from "../pageObjectModel/notificationPage";
+import { profilePage } from "../pageObjectModel/profilePage";
 
 interface TestFixtures {
   runner: Utils;
-  lambdaPage: LambdaHomePage;
-  loginPage: LoginPage;
-  accountPage: AccountPage;
-  delineatePage: delineateHomePage;
+  userLoginPage: loginPage;
+  userLandingPage: homePage;
+  userRegisterPage: registerPage;
+  userDashboardPage: dashboardPage;
+  userStartMatchingPage: startMatchingPage;
+  userMatchesPage: matchesPage;
+  userNotificationPage: notificationPage;
+  userProfilePage: profilePage;
 }
 
 interface PageFixture {
@@ -22,21 +30,43 @@ const test = base.extend<TestFixtures>({
     const utilsInstance = new Utils(page);
     await use(utilsInstance);
   },
-  lambdaPage: async ({ page }: PageFixture, use) => {
-    const lambdaPageInstance = new LambdaHomePage(page);
-    await use(lambdaPageInstance);
+  userLoginPage: async ({ page }: PageFixture, use) => {
+    const userLoginPageInstance = new loginPage(page);
+    await use(userLoginPageInstance);
   },
-  loginPage: async ({ page }: PageFixture, use) => {
-    const loginPageInstance = new LoginPage(page);
-    await use(loginPageInstance);
+
+  userLandingPage: async ({ page }: PageFixture, use) => {
+    const userHomePageInstance = new homePage(page);
+    await use(userHomePageInstance);
   },
-  accountPage: async ({ page }: PageFixture, use) => {
-    const accountPageInstance = new AccountPage(page);
-    await use(accountPageInstance);
+
+  userRegisterPage: async ({ page }: PageFixture, use) => {
+    const userRegisterPageInstance = new registerPage(page);
+    await use(userRegisterPageInstance);
   },
-  delineatePage: async ({ page }: PageFixture, use) => {
-    const delineatePageInstance = new delineateHomePage(page);
-    await use(delineatePageInstance);
+
+  userDashboardPage: async ({ page }: PageFixture, use) => {
+    const userDashboardPageInstance = new dashboardPage(page);
+    await use(userDashboardPageInstance);
+  },
+
+  userStartMatchingPage: async ({ page }: PageFixture, use) => {
+    const userStartMatchingInstance = new startMatchingPage(page);
+    await use(userStartMatchingInstance);
+  },
+
+  userMatchesPage: async ({ page }: PageFixture, use) => {
+    const userMatchesInstance = new matchesPage(page);
+    await use(userMatchesInstance);
+  },
+
+  userNotificationPage: async ({ page }: PageFixture, use) => {
+    const userNotificationInstance = new notificationPage(page);
+    await use(userNotificationInstance);
+  },
+  userProfilePage: async ({ page }: PageFixture, use) => {
+    const userProfileInstance = new profilePage(page);
+    await use(userProfileInstance);
   },
 });
 

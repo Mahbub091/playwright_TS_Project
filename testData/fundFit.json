@@ -1,0 +1,17 @@
+{
+  "textDecorationColorCss": "text-decoration-color",
+  "textColorCss": "color",
+  "backgroundColorCss": "background-color",
+  "hrefCss": "href",
+  "fundFitTitle": "FundFit",
+  "logoImageSource": "/assets/logo-BTFpVDFz.png",
+  "blackColorCode": "rgb(0, 0, 0)",
+  "secondBlackColorCode": "rgb(2, 8, 23)",
+  "grayColorCode": "rgb(100, 116, 139)",
+  "redColorCode": "rgb(217, 38, 38)",
+  "red500ColorCode": "rgb(239, 68, 68)",
+  "orangeColorCode": "rgb(255, 109, 0)",
+  "secondOrangeColor": "rgb(255, 255, 255)",
+  "blueColorCode": "rgb(37, 99, 235)",
+  "submitButtonText": "Submit"
+}

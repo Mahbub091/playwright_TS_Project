@@ -1,23 +1,26 @@
 import * as fs from "fs";
 import * as path from "path";
 
-interface LambdaData {
+interface UserData {
   expectedTexts: string[];
-  accountMenuTexts: string[];
+  navbarTexts: string[];
+  dashboardAllCardHeaderTexts: [];
 }
 
 export class ExpectedTextProvider {
   protected expectedTexts: string[];
-  protected accountMenuTexts: string[];
+  protected navbarTexts: string[];
+  protected dashboardAllCardHeaderTexts: string[];
 
   constructor() {
-    const data = this.loadLambdaData();
+    const data = this.loadUserData();
     this.expectedTexts = data.expectedTexts;
-    this.accountMenuTexts = data.accountMenuTexts;
+    this.navbarTexts = data.navbarTexts;
+    this.dashboardAllCardHeaderTexts = data.dashboardAllCardHeaderTexts;
   }
 
-  private loadLambdaData(): LambdaData {
-    const jsonFilePath = path.resolve(__dirname, "../testData/lambda.json");
+  private loadUserData(): UserData {
+    const jsonFilePath = path.resolve(__dirname, "../testData/text.json");
 
     try {
       const data = fs.readFileSync(jsonFilePath, "utf-8");

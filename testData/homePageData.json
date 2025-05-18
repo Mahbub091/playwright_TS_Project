@@ -1,0 +1,21 @@
+{
+  "SuccessfulLoginToastText": "Login SuccessfulYou have been logged in successfully.",
+  "textDecorationColorCss": "text-decoration-color",
+  "fundFitTitle": "FundFit",
+  "logoImageSource": "/assets/logo-BTFpVDFz.png",
+  "blackColorCode": "rgb(0, 0, 0)",
+  "loginButtonText": "Login",
+  "emailInputBoxPlaceholderText": "Enter your email",
+  "homePageHeroText": "Better funding + teaming with AI insights",
+  "homePageHeroText2": "Learn why institutions across the country are adopting Streamlyne FundFit to locate funding opportunities and build best-fit research teams faster than ever",
+  "registerButtonText": "Register",
+  "homePageViewPricingButtonText": "View pricing",
+  "homePageStartTrialButtonText": "Start free trial",
+  "homePageFooterText": "© 2025 Streamlyne. All Rights Reserved. Version: latest",
+  "userTierHeroText": "Simple, transparent pricing",
+  "userTierSubHeroText": "Choose the plan that works best for you or your organization",
+  "researcherSectionHeaderText": "I'm a Researcher...",
+  "administratorSectionHeaderText": "I'm an Administrator...",
+  "loginButtonHrefValue": "/login",
+  "registerButtonHrefValue": "/register"
+}

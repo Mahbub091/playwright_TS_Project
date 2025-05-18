@@ -1,15 +1,14 @@
 import { createLogger, format, transports } from "winston";
 import fs from "fs";
+import { allure } from "allure-playwright";
 
-// Define log file path
-const LOG_FILE_PATH = "test-logs.log";
+const LOG_FILE_PATH = "reports/test_log/test-logs.log";
 
-// Delete log file before each execution
 if (fs.existsSync(LOG_FILE_PATH)) {
   fs.unlinkSync(LOG_FILE_PATH);
 }
 
-const logger = createLogger({
+const baseLogger = createLogger({
   level: "info",
   format: format.combine(
     format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
@@ -22,5 +21,22 @@ const logger = createLogger({
     new transports.File({ filename: LOG_FILE_PATH }),
   ],
 });
+
+const logger = {
+  info: (message: string | string[]) => {
+    baseLogger.info(message);
+    allure.step(
+      Array.isArray(message) ? message.join(", ") : message,
+      async () => Promise.resolve(),
+    );
+  },
+  error: (message: string | string[]) => {
+    baseLogger.info(message);
+    allure.step(
+      Array.isArray(message) ? message.join(", ") : message,
+      async () => Promise.resolve(),
+    );
+  },
+};
 
 export default logger;
