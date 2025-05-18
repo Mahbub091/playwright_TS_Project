@@ -23,7 +23,7 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
 
   // Running all tests in a single worker
-  workers: 1,
+  workers: 5,
 
   // Generating only HTML reporter/ Allure report will be in the test run in the upcoming time
   reporter: [["allure-playwright", { resultsDir: "reports/allure-results" }]],
