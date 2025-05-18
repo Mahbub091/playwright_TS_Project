@@ -1,33 +1,40 @@
 name: Playwright Test Suite
 on:
-  [push]
+  push:
 
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
+      - uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: npm ci
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-    - name: Run Playwright tests
-      run: |
-        npx playwright test --project=chromium
-        npm install -D allure-commandline
-    - name: Generate Allure report
-      run: npx allure generate allure-results --clean -o allure-report
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install -D allure-commandline
 
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: allure-reports
-        path: allure-report/
-        retention-days: 30
+      - name: Run Playwright tests
+        run: npx playwright test --project=chromium
+
+      - name: Generate Allure report
+        run: npx allure generate allure-results --clean -o allure-report
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: allure-reports
+          path: allure-report/
+          retention-days: 30
