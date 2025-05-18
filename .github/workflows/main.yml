@@ -1,39 +1,19 @@
-name: Playwright Test Suite
-
+name: Playwright Tests
 on:
-  [push, pull_request]
-
+  push:
+    branches: [ main ]
 jobs:
-  test:
+  playwright:
+    name: 'Playwright Tests'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
-
+    container:
+      image: mcr.microsoft.com/playwright:v1.46.1-jammy
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Pull Playwright Docker image
-        run: docker pull mcr.microsoft.com/playwright:v1.44.0-jammy
-
-      - name: Run Playwright tests in Docker
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/work \
-            -w /work \
-            mcr.microsoft.com/playwright:v1.44.0-jammy \
-            bash -c "npm ci && npm run install:playwright && npm test && npm run report:allure"
-
-      - name: Copy Allure report from Docker container
-        if: always()
-        run: |
-          mkdir -p allure-report
-          # Allure report should be generated in the workspace by the previous step
-
-      - uses: actions/upload-artifact@v4
-        if: always()
+      - uses: actions/setup-node@v4
         with:
-          name: allure-reports
-          path: allure-report/
-          retention-days: 30
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run your tests
+        run: npx playwright test
